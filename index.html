@@ -12,10 +12,12 @@
           $.ajax({
             type: 'GET',
             url: '/reverse',
-            data: {s: $('#txt').val()},
+            data: {s1: $('#txt').val(), s2:"nook"},
             datatype: 'json',
             success: function(data){
-              $('#output').text(data)
+              console.log(data)
+              $('#output1').text(data.r1)
+              $('#output2').text(data.r2)
             },
             fail: function(){
               console.log("BADDDDDDDD")
@@ -32,6 +34,7 @@
     <div>Hello</div>
     <input type="text" id="txt"></input>
     <button id="btn">Press me!</button>
-    <div style="background-color:green;" id="output">ddd</div>
+    <div style="background-color:green;" id="output1">ddd</div>
+    <div style="background-color:yellow;" id="output2">ddd</div>
   </body>
 </html>

@@ -8,9 +8,15 @@ app.get('/', function (req, res) {
 });
 
 app.get('/reverse', function(req, res){
-  s = req.query.s
-  console.log(s)
-  res.json(s.split("").reverse().join(""))
+  s1 = req.query.s1
+  console.log(s1)
+  s2 = req.query.s2
+  console.log(s1)
+  ret = {
+    r1: s1.split("").reverse().join(""),
+    r2: s2+s2
+  }
+  res.json(ret)
 })
 
 
